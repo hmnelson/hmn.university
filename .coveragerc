@@ -1,0 +1,6 @@
+[report]
+include =
+    src/hmn/*
+omit =
+    */test*
+    */upgrades/*
