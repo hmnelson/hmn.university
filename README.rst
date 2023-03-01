@@ -33,35 +33,28 @@ hmn.university
 
 An add-on for Plone for universities. (Training exercise.)
 
-Features
---------
+MySQL
+=====
 
-- Can be bullet points
+CREATE TABLE `email_msgs` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email_address` varchar(255) COLLATE utf8_bin NOT NULL,
+    `subject` varchar(255) COLLATE utf8_bin NOT NULL,
+    `body` varchar(10000) COLLATE utf8_bin NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+AUTO_INCREMENT=1 ;
 
+Email Form
+==========
 
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+I fell off the edge of my mental map when it came to the part of the assignment 
+in which I was to create a z3c form with 3 fields email address, subject and body 
+and save the data into mysql. That remains untouched, although I created the mysql table.
 
 
 Installation
-------------
+============
 
 Install hmn.university by adding it to your buildout::
 
@@ -77,35 +70,16 @@ and then running ``bin/buildout``
 
 
 Authors
--------
+=======
 
-Provided by awesome people ;)
-
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
-
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/hmn.university/issues
-- Source Code: https://github.com/collective/hmn.university
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
+Hilary Mark Nelson
+Web Developer
+College of Engineering
+Purdue University
+West Lafayette, Indiana
+USA
 
 License
--------
+=======
 
 The project is licensed under the GPLv2.
