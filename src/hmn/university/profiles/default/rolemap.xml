@@ -3,6 +3,14 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission name="hmn.university: Add Teacher" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+
     <permission name="hmn.university: Add Department" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
