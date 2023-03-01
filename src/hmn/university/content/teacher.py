@@ -2,22 +2,32 @@
 # from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.dexterity.content import Item
-
-# from plone.namedfile import field as namedfile
+from plone.namedfile import field as namedfile
 from plone.supermodel import model
-
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from zope import schema
+# from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from zope.interface import implementer
+from zope.interface import invariant
+from hmn.university import _
 
 
-# from hmn.university import _
 
 
 class ITeacher(model.Schema):
     """Marker interface and Dexterity Python Schema for Teacher"""
 
+    teacherName = schema.TextLine(
+        title=_(u'Teacher name'),
+        required=True
+    )
+
+    teacherPhoto = namedfile.NamedBlobImage(
+        title=_(u'Teacher photo'),
+        required=False
+    )
+    
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
 
