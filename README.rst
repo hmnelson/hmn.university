@@ -33,6 +33,13 @@ hmn.university
 
 An add-on for Plone for universities. (Training exercise.)
 
+Email Form
+==========
+
+I fell off the edge of my mental map when it came to the part of the assignment 
+in which I was to create a z3c form with 3 fields email address, subject and body 
+and save the data into mysql. That remains untouched, although I created the mysql table.
+
 MySQL
 =====
 
@@ -44,13 +51,6 @@ CREATE TABLE `email_msgs` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
 AUTO_INCREMENT=1 ;
-
-Email Form
-==========
-
-I fell off the edge of my mental map when it came to the part of the assignment 
-in which I was to create a z3c form with 3 fields email address, subject and body 
-and save the data into mysql. That remains untouched, although I created the mysql table.
 
 
 Installation
