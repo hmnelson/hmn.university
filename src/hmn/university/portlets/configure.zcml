@@ -1,0 +1,26 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone">
+
+  <include package="plone.app.portlets" />
+
+  <!-- '-*- extra stuff goes here -*-' -->
+
+  <plone:portlet
+    name="hmn.university.portlets.DepartmentTeachersPortlet"
+    interface=".departmentTeachersPortlet.IDepartmentTeachersPortlet"
+    assignment=".departmentTeachersPortlet.Assignment"
+    renderer=".departmentTeachersPortlet.Renderer"
+    addview=".departmentTeachersPortlet.AddForm"
+    editview=".departmentTeachersPortlet.EditForm" />
+
+  <plone:portlet
+    name="hmn.university.portlets.DepartmentStudentsPortlet"
+    interface=".departmentStudentsPortlet.IDepartmentStudentsPortlet"
+    assignment=".departmentStudentsPortlet.Assignment"
+    renderer=".departmentStudentsPortlet.Renderer"
+    addview=".departmentStudentsPortlet.AddForm"
+    editview=".departmentStudentsPortlet.EditForm" />
+    
+</configure>

@@ -1,0 +1,37 @@
+<div class="portlet">
+  <header class="portletHeader">
+    Manage <tal:department content="context/Title" /> Students
+  </header>
+  <section class="portletContent">
+    <ul>
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Department'" 
+           tal:attributes="href python:context.absolute_url() + '/student_list'">Student list</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Department'" 
+           tal:attributes="href python:context.absolute_url() + '/++add++Student'">Add student</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Student'" 
+           href="../student_list">Student list</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Student'" 
+           tal:attributes="href python:context.absolute_url() + '/edit'">Edit student</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 
+    <footer class="portletFooter">
+    </footer>
+  -->
+</div>

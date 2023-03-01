@@ -13,11 +13,10 @@ from zope.interface import invariant
 from hmn.university import _
 
 vocab_gender = SimpleVocabulary([
-    SimpleTerm(value='--NOVALUE--', title=_(u'Preferred gender description')),
     SimpleTerm(value='female', title=_(u'Female')),
     SimpleTerm(value='male', title=_(u'Male')),
     SimpleTerm(value='nonbinary', title=_(u'Nonbinary')),
-    SimpleTerm(value='unspecified', title=_(u'Unspecified'))
+    SimpleTerm(value='unspecified', title=_(u'Unspecified')),
 ])
 
 class IStudent(model.Schema):
@@ -59,7 +58,7 @@ class IStudent(model.Schema):
                 raise Invalid(_(u'Age of student must be a number'))
             else:
                 if int(data.age) >= 110:
-                    raise Invalid(_(u'%s?! Are you kidding?!' % data.age'))
+                    raise Invalid(_(u'%s?! Are you kidding?!' % data.age))
 
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
