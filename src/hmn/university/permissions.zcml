@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="hmn.university.AddCourseContent"
+        title="hmn.university: Add CourseContent"
+    />
+
+
+    <permission
         id="hmn.university.AddCourse"
         title="hmn.university: Add Course"
     />

@@ -11,6 +11,14 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission name="hmn.university: Add CourseContent" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+
     <permission name="hmn.university: Add Course" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
