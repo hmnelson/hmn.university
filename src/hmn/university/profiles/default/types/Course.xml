@@ -1,40 +1,37 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Department"
+    name="Course"
     meta_type="Dexterity FTI"
     i18n:domain="hmn.university">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Department</property>
+      name="title">Course</property>
   <property
       i18n:translate=""
-      name="description">A university department.</property>
+      name="description">A department course.</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Department</property>
+  <property name="factory">Course</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
-  <property name="filter_content_types">False</property>
+  <property name="global_allow">False</property>
+  <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="Course" />
-        <element value="Student" />
-        <element value="Teacher" />
-      <!--
+  <!--
     <element value="Document" />
     <element value="File" />
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">hmn.university.AddDepartment</property>
-  <property name="klass">hmn.university.content.department.Department</property>
+  <property name="add_permission">hmn.university.AddCourse</property>
+  <property name="klass">hmn.university.content.course.Course</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">hmn.university.content.department.IDepartment</property>
+  <property name="schema">hmn.university.content.course.ICourse</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -63,12 +60,12 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Department</property>
-  <property name="default_view">student_list</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Course</property>
+  <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
-  <property name="immediate_view">student_list</property>
+  <property name="immediate_view">view</property>
   <property name="view_methods">
-    <element value="student_list"/>
+    <element value="view"/>
   </property>
 
   <!-- Method aliases -->
