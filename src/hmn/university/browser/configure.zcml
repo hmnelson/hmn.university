@@ -32,4 +32,13 @@
       template="teacher_list.pt"
       permission="zope2.View" />
 
+  <browser:page
+      name="login_next"
+      for="*"
+      class=".login_redirect.LoginNext"
+      permission="zope2.Public"
+      />
+
+
+
 </configure>
