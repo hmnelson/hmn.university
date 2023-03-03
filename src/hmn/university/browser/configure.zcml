@@ -31,6 +31,20 @@
       name="teacher_list"
       template="teacher_list.pt"
       permission="zope2.View" />
+  
+  <browser:page
+      for="*"
+      class=".course_views.CourseList"
+      name="course_list"
+      template="course_list.pt"
+      permission="zope2.View" />
+  
+  <browser:page
+      for="*"
+      class=".course_views.CourseView"
+      name="course"
+      template="course.pt"
+      permission="zope2.View" />
 
   <browser:page
       name="login_next"

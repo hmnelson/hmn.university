@@ -33,24 +33,11 @@ hmn.university
 
 An add-on for Plone for universities. (Training exercise.)
 
-Email Form
+"Course" and "Course content" content types
 ==========
 
-I fell off the edge of my mental map when it came to the part of the assignment 
-in which I was to create a z3c form with 3 fields email address, subject and body 
-and save the data into mysql. That remains untouched, although I created the mysql table.
-
-MySQL
-=====
-
-CREATE TABLE `email_msgs` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `email_address` varchar(255) COLLATE utf8_bin NOT NULL,
-    `subject` varchar(255) COLLATE utf8_bin NOT NULL,
-    `body` varchar(10000) COLLATE utf8_bin NOT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
-AUTO_INCREMENT=1 ;
+I'm catching up on my homework. In this branch, I've added the Day 2 homework 
+(Course and Course content) to my existing hmn.university addon.
 
 
 Installation
@@ -67,6 +54,18 @@ Install hmn.university by adding it to your buildout::
 
 
 and then running ``bin/buildout``
+
+MySQL
+=====
+
+CREATE TABLE `email_msgs` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email_address` varchar(255) COLLATE utf8_bin NOT NULL,
+    `subject` varchar(255) COLLATE utf8_bin NOT NULL,
+    `body` varchar(10000) COLLATE utf8_bin NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+AUTO_INCREMENT=1 ;
 
 
 Authors

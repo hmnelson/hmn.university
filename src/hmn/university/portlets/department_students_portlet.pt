@@ -1,6 +1,7 @@
-<div class="portlet">
+<div class="portlet"
+     tal:condition="python: context.portal_type in ['Department']">
   <header class="portletHeader">
-    Manage <tal:department content="context/Title" /> Students
+    <tal:department content="context/Title" /> Students
   </header>
   <section class="portletContent">
     <ul>

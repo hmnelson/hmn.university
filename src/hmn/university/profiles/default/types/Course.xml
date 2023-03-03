@@ -12,7 +12,7 @@
       i18n:translate=""
       name="description">A department course.</property>
 
-  <property name="allow_discussion">False</property>
+  <property name="allow_discussion">True</property>
   <property name="factory">Course</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
@@ -62,11 +62,11 @@
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++Course</property>
-  <property name="default_view">view</property>
+  <property name="default_view">course</property>
   <property name="default_view_fallback">False</property>
-  <property name="immediate_view">view</property>
+  <property name="immediate_view">course</property>
   <property name="view_methods">
-    <element value="view"/>
+    <element value="course"/>
   </property>
 
   <!-- Method aliases -->
