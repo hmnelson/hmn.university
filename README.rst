@@ -60,19 +60,6 @@ Install hmn.university by adding it to your buildout::
 
 and then running ``bin/buildout``
 
-MySQL
-=====
-
-CREATE TABLE `email_msgs` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `email_address` varchar(255) COLLATE utf8_bin NOT NULL,
-    `subject` varchar(255) COLLATE utf8_bin NOT NULL,
-    `body` varchar(10000) COLLATE utf8_bin NOT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
-AUTO_INCREMENT=1 ;
-
-
 Authors
 =======
 
