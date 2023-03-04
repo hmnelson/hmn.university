@@ -25,8 +25,7 @@ class CourseList(BrowserView):
         query = self.getQuery()
         result = self.context.portal_catalog.searchResults(query)
         batch = Batch(result, b_size, int(b_start), orphan=0)
-        total = len(result)
-        return [batch, total]
+        return batch
 
     def sort_on(self):
         value = self.request.get("sort_on", "sortable_title")
@@ -76,5 +75,4 @@ class CourseView(BrowserView):
         query = self.getQuery()
         result = self.context.portal_catalog.searchResults(query)
         total = len(result)
-        import pdb; pdb.set_trace()
         return [result, total]

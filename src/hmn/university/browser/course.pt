@@ -44,8 +44,6 @@
         </metal:contents>
       </table>
 
-      <div metal:use-macro="here/batch_macros/macros/navigation"></div>
-
     </div>
 
   </metal:main>

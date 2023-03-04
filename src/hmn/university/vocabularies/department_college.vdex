@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex language="en" 
+      orderSignificant="true" 
+      xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0">
+    <vocabIdentifier>department_college</vocabIdentifier>
+    <term>
+        <termIdentifier>computer_science</termIdentifier>
+        <caption>
+            <langstring language="en">Computer Science</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>engineering</termIdentifier>
+        <caption>
+            <langstring language="en">Engineering</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>humanities</termIdentifier>
+        <caption>
+            <langstring language="en">Humanities</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>science</termIdentifier>
+        <caption>
+            <langstring language="en">Science</langstring>
+        </caption>
+    </term>
+</vdex>

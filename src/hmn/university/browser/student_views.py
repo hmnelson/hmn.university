@@ -32,8 +32,7 @@ class StudentList(BrowserView):
         query = self.getQuery()
         result = self.context.portal_catalog.searchResults(query)
         batch = Batch(result, b_size, int(b_start), orphan=0)
-        total = len(result)
-        return [batch, total]
+        return batch
 
     def get_age(self):
         value = self.request.get("age", None)
