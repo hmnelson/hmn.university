@@ -33,8 +33,8 @@ hmn.university
 
 An add-on for Plone for universities. (Training exercise.)
 
-"Course" and "Course content" content types
-==========
+State of my homework
+====================
 
 I'm catching up on my homework. In this branch, I've added the Day 2 homework 
 (Course and Course content) to my existing hmn.university addon.
