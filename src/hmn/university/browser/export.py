@@ -2,7 +2,7 @@ from zope.publisher.browser import BrowserView
 from hmn.university.database import get_connection
 from plone import api
 import logging
-import transaction
+# import transaction
 logger = logging.getLogger('export')
 
 
@@ -28,17 +28,17 @@ class ExportStudentToMySQL(BrowserView):
                 for student in students:
                     obj = student.getObject()
                     obj_values = (
-                        obj.studentName, 
-                        str(obj.age), 
+                        obj.studentName,
+                        str(obj.age),
                         obj.gender
                     )
                     sql = """INSERT INTO `students` (
-                        `student_name`, 
-                        `age`, 
+                        `student_name`,
+                        `age`,
                         `gender`
                     ) VALUES (
-                        '%s', 
-                        '%s', 
+                        '%s',
+                        '%s',
                         '%s'
                     )""" % obj_values
                     logger.info(sql)
@@ -47,10 +47,12 @@ class ExportStudentToMySQL(BrowserView):
                     cursor.execute(sql)
                     connection.commit()
         return '\n'.join(results)
-    
+
+
 class ExportDepartmentToMySQL(BrowserView):
     def __call__(self):
-        departments = api.content.find(portal_type='Department', sort_on='created')
+        departments = api.content.find(portal_type='Department',
+                                       sort_on='sortable_title')
         connection = get_connection()
         results = ['Done:']
         with connection:
@@ -74,29 +76,29 @@ class ExportDepartmentToMySQL(BrowserView):
                 for department in departments:
                     obj = department.getObject()
                     obj_values = (
-                        obj.Title(), 
-                        obj.college, 
-                        obj.accredited, 
-                        obj.department_created_date, 
-                        obj.totalStudents(), 
-                        obj.totalTeachers(), 
+                        obj.Title(),
+                        obj.college,
+                        obj.accredited,
+                        obj.department_created_date,
+                        obj.totalStudents(),
+                        obj.totalTeachers(),
                         obj.totalCourses()
                     )
                     sql = """INSERT INTO `departments` (
-                        `department_name`, 
-                        `college`, 
-                        `accredited`, 
-                        `department_created_date`, 
-                        `total_students`, 
-                        `total_teachers`, 
+                        `department_name`,
+                        `college`,
+                        `accredited`,
+                        `department_created_date`,
+                        `total_students`,
+                        `total_teachers`,
                         `total_courses`
                     ) VALUES (
-                        '%s', 
-                        '%s', 
-                        '%s', 
-                        '%s', 
-                        '%s', 
-                        '%s', 
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
                         '%s'
                     )""" % obj_values
                     logger.info(sql)

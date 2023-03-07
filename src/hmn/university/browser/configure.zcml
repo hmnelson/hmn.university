@@ -23,14 +23,16 @@
       class=".student_views.StudentList"
       name="student_list"
       template="student_list.pt"
-      permission="zope2.View" />
+      permission="zope2.View"
+      />
   
   <browser:page
       for="*"
       class=".teacher_views.TeacherList"
       name="teacher_list"
       template="teacher_list.pt"
-      permission="zope2.View" />
+      permission="zope2.View"
+      />
   
   <browser:page
       for="*"
@@ -44,7 +46,8 @@
       class=".course_views.CourseView"
       name="course"
       template="course.pt"
-      permission="zope2.View" />
+      permission="zope2.View"
+      />
 
   <browser:page
       name="login_next"
@@ -66,5 +69,7 @@
      class=".export.ExportDepartmentToMySQL"
      permission="zope2.View"
      />
+
+  <include package=".email_form" />
 
 </configure>
