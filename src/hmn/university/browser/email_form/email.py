@@ -40,7 +40,7 @@ class EmailForm(form.Form):
                              `from_address`,
                              `to_address`,
                              `subject`,
-                             `body`,
+                             `body`
                          ) VALUES (%s, %s, %s, %s)"""
                 cursor.execute(
                     sql,
@@ -58,7 +58,7 @@ class EmailForm(form.Form):
                 # Read a single record
                 sql = """SELECT `id`, `to_address`, `subject`, `body`
                          FROM `email_msgs`
-                         WHERE `email`=%s"""
+                         WHERE `from_address`=%s"""
                 cursor.execute(sql, (data.get('from_address'),))
                 result = cursor.fetchone()
                 logger.info(result)

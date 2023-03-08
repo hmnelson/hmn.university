@@ -36,13 +36,19 @@ An add-on for Plone for universities. (Training exercise.)
 State of my homework
 ====================
 
-I'm catching up on my homework. In this branch, I've added the Day 2 homework 
-(Course and Course content) to my existing hmn.university addon.
+I believe I've now completed all the assignments, including the Day 3 
+z3c email form that saves to mySQL. 
 
-I've also included the Day 5 homework: Department fields, widgets, functions, 
-and export to mySQL.
+I also added first and last names to students, and the behavior to get 
+the name from them and a Title() method that returns a concatenation
+of the two.
 
-Still on my to-do list: the Day 3 z3c form and saving it to mySQL.
+That last bit doesn't quite work the way I want it to. I'd like to 
+take the title and summary fields off the Add Student page, and set 
+the actual title property from the Title() method. 
+
+I also need a refresher on how to add indexes to the catalog for 
+firstName and lastName. (Can that be done in code? I can't recall.)
 
 
 Installation
@@ -59,6 +65,13 @@ Install hmn.university by adding it to your buildout::
 
 
 and then running ``bin/buildout``
+
+Starting Docker and mySQL
+=========================
+
+From the Plone root directory, run:
+
+./docker-mysql-5.7.sh
 
 Authors
 =======

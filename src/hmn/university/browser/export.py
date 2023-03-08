@@ -28,7 +28,7 @@ class ExportStudentToMySQL(BrowserView):
                 for student in students:
                     obj = student.getObject()
                     obj_values = (
-                        obj.studentName,
+                        obj.Title(),
                         str(obj.age),
                         obj.gender
                     )
