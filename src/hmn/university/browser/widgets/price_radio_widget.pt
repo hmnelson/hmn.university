@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="++plone++hmn.university/css/price_radio_widget.css" />
+<fieldset class="price-radio-widget">
+<!-- <legend>Ad spend</legend> -->
+<div class="pills">
+
+    <input type="radio" value="5" 
+           tal:attributes="id string:${view/id}_5;
+                           name view/name;
+                           checked python:view.value == '5.0'">
+    <label tal:attributes="for string:${view/id}_5;" >
+        <tal:currency content="view/currency_symbol" />5
+    </label>
+
+    <input type="radio" value="10" 
+           tal:attributes="id string:${view/id}_10;
+                           name view/name;
+                           checked python:view.value == '10.0'">
+    <label tal:attributes="for string:${view/id}_10;" >
+        <tal:currency content="view/currency_symbol" />10
+    </label>
+
+    <input type="radio" value="15" 
+           tal:attributes="id string:${view/id}_15;
+                           name view/name;
+                           checked python:view.value == '15.0'">
+    <label tal:attributes="for string:${view/id}_15;" >
+        <tal:currency content="view/currency_symbol" />15
+    </label>
+
+    <input type="radio" value="20" 
+           tal:attributes="id string:${view/id}_20;
+                           name view/name;
+                           checked python:view.value == '20.0'">
+    <label tal:attributes="for string:${view/id}_20;" >
+        <tal:currency content="view/currency_symbol" />20
+    </label>
+
+    <input type="radio" value="30" 
+           tal:attributes="id string:${view/id}_30;
+                           name view/name;
+                           checked python:view.value == '30.0'">
+    <label tal:attributes="for string:${view/id}_30;" >
+        <tal:currency content="view/currency_symbol" />30
+    </label>
+
+    <input type="radio" value="40" 
+           tal:attributes="id string:${view/id}_40;
+                           name view/name;
+                           checked python:view.value == '40.0'">
+    <label tal:attributes="for string:${view/id}_40;" >
+        <tal:currency content="view/currency_symbol" />40
+    </label>
+
+    <input type="radio" value="50" 
+           tal:attributes="id string:${view/id}_50;
+                           name view/name;
+                           checked python:view.value == '50.0'">
+    <label tal:attributes="for string:${view/id}_50;" >
+        <tal:currency content="view/currency_symbol" />50
+    </label>
+
+</div>
+<output></output>
+</fieldset>

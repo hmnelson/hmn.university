@@ -35,7 +35,7 @@
     <!-- <element value="plone.namefromtitle"/> -->
     <!-- <element value="plone.allowdiscussion"/> -->
     <!-- <element value="plone.shortname"/> -->
-    <element value="hmn.university.behaviors.student.INameFromFirstAndLastName" />
+    <element value="hmn.university.behaviors.student_behavior.INameFromFirstAndLastName" />
     <element value="plone.excludefromnavigation"/>
     <element value="plone.ownership"/>
     <element value="plone.publication"/>

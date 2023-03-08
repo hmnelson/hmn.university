@@ -39,7 +39,7 @@ def add_catalog_indexes(context):
     indexes = catalog.indexes()
 
     wanted_dateindex = []
-    wanted_fieldindex = ["age", "gender", "facultyRank"]
+    wanted_fieldindex = ["firstName", "lastName", "age", "gender", "facultyRank"]
     wanted_keywordindex = []
     wanted_zctextindex = ["teacherName"]
 

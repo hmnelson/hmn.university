@@ -2,7 +2,7 @@
 from hmn.university import _
 from plone.app.textfield import RichText
 
-# from plone.autoform import directives
+from plone.autoform import directives
 from plone.dexterity.content import Item
 from plone.namedfile import field as namedfile
 from plone.supermodel import model
@@ -15,6 +15,7 @@ from zope.interface import invariant
 from zope.interface import Invalid
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+from hmn.university.browser.widgets.price_radio_widget import PriceRadioFieldWidget
 
 
 vocab_gender = SimpleVocabulary(
@@ -34,6 +35,8 @@ class IStudent(model.Schema):
     # studentName = schema.TextLine(title=_("Name of student"), required=True)
     age = schema.TextLine(title=_("Age of student"), required=True)
     gender = schema.Choice(title=_("Gender"), vocabulary=vocab_gender, required=False)
+    directives.widget(studentHourlyRate=PriceRadioFieldWidget)
+    studentHourlyRate = schema.Float(title=_(u'Hourly Rate'), required=False)
     bio = RichText(title=_("Biography"), required=False)
     studentPhoto = namedfile.NamedBlobImage(title=_("Student photo"), required=False)
 

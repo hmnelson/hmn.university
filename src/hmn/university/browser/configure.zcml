@@ -72,4 +72,6 @@
 
   <include package=".email_form" />
 
+  <include package=".widgets" />
+
 </configure>

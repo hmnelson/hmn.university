@@ -8,8 +8,8 @@
     <plone:behavior
       title="NameFromFirstAndLastName"
       description="Automatically generate id from first and last name"
-      provides=".student.INameFromFirstAndLastName"
+      provides=".student_behavior.INameFromFirstAndLastName"
       />
-    <adapter factory=".student.NameFromFirstAndLastName" />
+    <adapter factory=".student_behavior.NameFromFirstAndLastName" />
 
 </configure>

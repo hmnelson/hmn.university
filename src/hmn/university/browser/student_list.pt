@@ -86,12 +86,12 @@
             <td>
               <div style="float:left; padding-right: 1rem;">
                 [<a tal:attributes="href python:student.getURL() + '/edit';
-                                    title string:Edit ${obj/studentName};">
+                                    title string:Edit ${obj/Title};">
                   Edit
                 </a>]
               </div>
               <a tal:attributes="href python:student.getURL() + '/'">
-                <span tal:content="python:obj.studentName" />
+                <span tal:content="python:obj.Title()" />
               </a>
             </td>
             <td>
