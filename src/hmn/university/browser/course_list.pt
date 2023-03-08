@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal" 
+      xmlns:metal="http://xml.zope.org/namespaces/metal" 
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n" 
+      lang="en" 
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+  <metal:main fill-slot="main">
+
+    <h1>
+      <tal:course content="structure context/title" /> Courses
+    </h1>
+
+    <div tal:define="batch python:view.getCourses();
+                     b_size view/batch_size;
+                     sort_on view/sort_on;">
+
+      <form tal:attributes="action python:context.absolute_url()+'/course_list'" class="row">
+        <div class="col-md-3">
+          <label i18n:translate="show">Show</label>
+          <div>
+            <select id="b_size" NAME="b_size">
+                <option tal:repeat="item python:tuple([('','Select')]+[(str(i),str(i)) for i in (1,5,10,20,50,100,150,200,'all')])" 
+                tal:attributes="value python:item[0];selected python:str(context.REQUEST.get('b_size',10)) == item[0] and 'selected' or '';">
+                  <span tal:replace="python:item[1]" i18n:translate="" />
+                </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label>Sort by</label>
+          <div>
+            <select id="form-horizontal-select" name="sort_on" id="sort_on">
+              <option value="sortable_title" tal:attributes="selected python:sort_on=='sortable_title' and 'selected' or '';" i18n:translate="rank">Title</option>
+              <option value="created" tal:attributes="selected python:sort_on=='created' and 'selected' or '';" i18n:translate="created">Created</option>
+              <option value="modified" tal:attributes="selected python:sort_on=='modified' and 'selected' or '';" i18n:translate="modified">Modified</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <br>
+          <div class="uk-form-controls">
+            <button class="uk-button uk-button-default uk-width-1-1" i18n:translate="">Refresh List</button>
+          </div>
+        </div>
+      </form>
+      <hr/>
+
+      <h3>Total: <span tal:content="context/totalCourses" /></h3>
+      <table class="listing">
+
+        <thead>
+          <tr>
+            <th i18n:translate="">Course Title</th>
+          </tr>
+        </thead>
+
+        <metal:courses tal:repeat="course batch">
+          <tr tal:define="obj python:course.getObject()">
+            <td>
+              <div style="float:left; padding-right: 1rem;">
+                [<a tal:attributes="href python:course.getURL() + '/edit';
+                                    title string:Edit ${obj/title};">
+                  Edit
+                </a>]
+              </div>
+              <a tal:attributes="href python:course.getURL() + '/'">
+                <span tal:content="python:obj.title" />
+              </a>
+            </td>
+          </tr>
+
+        </metal:courses>
+      </table>
+
+      <div metal:use-macro="here/batch_macros/macros/navigation"></div>
+
+    </div>
+
+  </metal:main>
+</body>
+
+</html>

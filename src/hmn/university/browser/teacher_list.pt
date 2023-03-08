@@ -13,9 +13,7 @@
       <tal:department content="structure context/title" /> Teachers
     </h1>
 
-    <div tal:define="data python:view.getTeachers();
-                     batch python:data[0];
-                     total python:data[1];
+    <div tal:define="batch python:view.getTeachers();
                      b_size view/batch_size;
                      sort_on view/sort_on;">
 
@@ -69,7 +67,7 @@
       </form>
       <hr/>
 
-      <h3>Total: <span tal:content="total" /></h3>
+      <h3>Total: <span tal:content="context/totalTeachers" /></h3>
       <table class="listing">
 
         <thead>

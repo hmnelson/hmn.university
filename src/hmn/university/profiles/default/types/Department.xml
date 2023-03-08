@@ -21,7 +21,8 @@
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
   <property name="allowed_content_types">
-    <element value="Student" />
+    <element value="Course" />
+        <element value="Student" />
         <element value="Teacher" />
       <!--
     <element value="Document" />

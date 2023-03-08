@@ -1,0 +1,81 @@
+.price-radio-widget.autotoc-section {
+    display: block !important;
+}
+
+.price-radio-widget .pills {
+    display: flex;
+}
+
+/* Visually hide the actual radio—we'll use the label for the visual "button" */
+.price-radio-widget [type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.price-radio-widget label {
+    display: grid;
+    place-content: center;
+    border-left: 1px solid;
+    padding: 0.5rem;
+    font-weight: 600;
+    line-height: 1;
+    background-color: grey;
+    color: white;
+}
+
+.price-radio-widget label:first-of-type {
+    border-left: 0;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.price-radio-widget label:last-of-type {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+@media (min-width: 40rem) {
+/* Spread the buttons out on desktop */
+    .price-radio-widget .pills {
+        column-gap: clamp(0.25rem, 0.25rem + 2vw, 1rem);
+        row-gap: 0.5rem;
+        flex-wrap: wrap;
+        }
+    .price-radio-widget label {
+        border-radius: 999px !important;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Style visible label button using the associated input's state */
+.price-radio-widget [type="radio"]:checked + label,
+.price-radio-widget [type="radio"]:hover + label {
+    background-color: magenta;
+}
+
+.price-radio-widget [type="radio"]:focus + label {
+    box-shadow: inset 0 0 4px hsl(0deg 0% 0% / 0.8);
+}
+
+/* Don't show focus styles when user interacts with a mouse */
+.price-radio-widget [type="radio"]:focus:not(:focus-visible) + label {
+    box-shadow: none;
+}
+
+fieldset.price-radio-widget  {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.price-radio-widget legend {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}

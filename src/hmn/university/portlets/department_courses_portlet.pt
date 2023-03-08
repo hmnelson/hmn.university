@@ -1,0 +1,44 @@
+<div class="portlet"
+     tal:condition="python: context.portal_type in ['Department', 'Course', 'Course content']">
+  <header class="portletHeader">
+    <tal:department content="context/Title" /> Courses
+  </header>
+  <section class="portletContent">
+    <ul>
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Department'" 
+           tal:attributes="href python:context.absolute_url() + '/course_list'">Course list</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Department'" 
+           tal:attributes="href python:context.absolute_url() + '/++add++Course'">Add course</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Course'" 
+           href="../course_list">Course list</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Course'" 
+           tal:attributes="href python:context.absolute_url() + '/edit'">Edit course</a>
+      </li>
+
+      <li class="portletItem">
+        <a class="tile" 
+           tal:condition="python: context.portal_type == 'Course'" 
+           tal:attributes="href python:context.absolute_url() + '/++add++Course%20content'">Add course content</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 
+    <footer class="portletFooter">
+    </footer>
+  -->
+</div>

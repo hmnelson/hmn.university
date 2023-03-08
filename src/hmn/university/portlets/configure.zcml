@@ -22,5 +22,13 @@
     renderer=".departmentStudentsPortlet.Renderer"
     addview=".departmentStudentsPortlet.AddForm"
     editview=".departmentStudentsPortlet.EditForm" />
+
+  <plone:portlet
+    name="hmn.university.portlets.DepartmentCoursesPortlet"
+    interface=".departmentCoursesPortlet.IDepartmentCoursesPortlet"
+    assignment=".departmentCoursesPortlet.Assignment"
+    renderer=".departmentCoursesPortlet.Renderer"
+    addview=".departmentCoursesPortlet.AddForm"
+    editview=".departmentCoursesPortlet.EditForm" />
     
 </configure>

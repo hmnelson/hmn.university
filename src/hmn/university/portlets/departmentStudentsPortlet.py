@@ -17,8 +17,10 @@ import six.moves.urllib.error
 import six.moves.urllib.parse
 import six.moves.urllib.request
 
+
 class IDepartmentStudentsPortlet(IPortletDataProvider):
     """"""
+
     # place_str = schema.TextLine(
     #    title=_("Name of your place with country code"),
     #    description=_("City name along with country code i.e Delhi,IN"),  # NOQA: E501
@@ -36,24 +38,28 @@ class Assignment(base.Assignment):
 
     @property
     def title(self):
-        return _(u"Department Students Portlet")
+        return _("Department Students Portlet")
+
 
 class AddForm(base.AddForm):
     schema = IDepartmentStudentsPortlet
     form_fields = field.Fields(IDepartmentStudentsPortlet)
-    label = _(u"Add Department Students portlet")
-    description = _(u"Menu of links for managing department students.")
+    label = _("Add Department Students portlet")
+    description = _("Menu of links for managing department students.")
 
     def create(self, data):
         return Assignment(
             # place_str=data.get("place_str", "delhi,in"),
         )
 
+
 class EditForm(base.EditForm):
     schema = IDepartmentStudentsPortlet
     form_fields = field.Fields(IDepartmentStudentsPortlet)
-    label = _(u"Edit Department Students portlet")
-    description = _(u"This portlet displays a menu of links for managing department students.")
+    label = _("Edit Department Students portlet")
+    description = _(
+        "This portlet displays a menu of links for managing department students."
+    )
 
 
 class Renderer(base.Renderer):

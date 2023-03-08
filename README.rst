@@ -33,24 +33,22 @@ hmn.university
 
 An add-on for Plone for universities. (Training exercise.)
 
-Email Form
-==========
+State of my homework
+====================
 
-I fell off the edge of my mental map when it came to the part of the assignment 
-in which I was to create a z3c form with 3 fields email address, subject and body 
-and save the data into mysql. That remains untouched, although I created the mysql table.
+I believe I've now completed all the assignments, including the Day 3 
+z3c email form that saves to mySQL. 
 
-MySQL
-=====
+I also added first and last names to students, and the behavior to get 
+the name from them and a Title() method that returns a concatenation
+of the two.
 
-CREATE TABLE `email_msgs` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `email_address` varchar(255) COLLATE utf8_bin NOT NULL,
-    `subject` varchar(255) COLLATE utf8_bin NOT NULL,
-    `body` varchar(10000) COLLATE utf8_bin NOT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
-AUTO_INCREMENT=1 ;
+That last bit doesn't quite work the way I want it to. I'd like to 
+take the title and summary fields off the Add Student page, and set 
+the actual title property from the Title() method. 
+
+I also need a refresher on how to add indexes to the catalog for 
+firstName and lastName. (Can that be done in code? I can't recall.)
 
 
 Installation
@@ -68,6 +66,12 @@ Install hmn.university by adding it to your buildout::
 
 and then running ``bin/buildout``
 
+Starting Docker and mySQL
+=========================
+
+From the Plone root directory, run:
+
+./docker-mysql-5.7.sh
 
 Authors
 =======

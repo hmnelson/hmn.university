@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<registry>
+<!-- -*- extra stuff goes here -*- -->
+    <records prefix="plone.resources/hmn-js"
+             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="js">++plone++hmn.university/js/university_common.js</value>
+        <value key="deps">jquery</value>
+    </records>
+    <records prefix="plone.resources/hmn-css"
+             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="css">++plone++hmn.university/css/university_common.css</value>
+    </records>
+    <records prefix="plone.bundles/hmn-common"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources">
+        <element>hmn-js</element>
+        <element>hmn-css</element>
+      </value>
+      <value key="enabled">True</value>
+      <value key="jscompilation">++plone++hmn.university/js/university_common.js</value>
+      <value key="csscompilation">++plone++hmn.university/css/university_common.css</value>
+      <value key="last_compilation">2023-03-07 00:00:00</value>
+      <!-- <value key="expression">python:context.absolute_url_path().startswith('/Plone/psychology')</value> -->
+    </records>
+</registry>

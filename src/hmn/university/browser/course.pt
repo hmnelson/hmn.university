@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal" 
+      xmlns:metal="http://xml.zope.org/namespaces/metal" 
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n" 
+      lang="en" 
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+  <metal:main fill-slot="main">
+
+    <h1>
+      <tal:course content="structure context/title" /> Course Content
+    </h1>
+
+    <div tal:define="data python:view.getContent();
+                     batch python:data[0];
+                     total python:data[1];">
+
+      <h3>Total: <span tal:content="total" /></h3>
+      <table class="listing">
+
+        <thead>
+          <tr>
+            <th i18n:translate="">Course content</th>
+          </tr>
+        </thead>
+
+        <metal:contents tal:repeat="content batch">
+          <tr tal:define="obj python:content.getObject()">
+            <td>
+              <div style="float:left; padding-right: 1rem;">
+                [<a tal:attributes="href python:content.getURL() + '/edit';
+                                    title string:Edit ${obj/title};">
+                  Edit
+                </a>]
+              </div>
+              <a tal:attributes="href python:content.getURL() + '/'">
+                <span tal:content="python:obj.title" />
+              </a>
+            </td>
+          </tr>
+
+        </metal:contents>
+      </table>
+
+    </div>
+
+  </metal:main>
+</body>
+
+</html>

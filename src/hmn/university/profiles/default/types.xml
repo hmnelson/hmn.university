@@ -5,4 +5,6 @@
   <object name="Department" meta_type="Dexterity FTI"/>
   <object name="Teacher" meta_type="Dexterity FTI"/>
   <object name="Student" meta_type="Dexterity FTI"/>
+  <object name="Course" meta_type="Dexterity FTI"/>
+  <object name="Course content" meta_type="Dexterity FTI"/>
 </object>
